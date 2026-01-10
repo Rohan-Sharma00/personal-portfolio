@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Tech-Focused Portfolio Design System - Icy Tech Vibe */
+
+@layer base {
+  :root {
+    /* Deep dark background with subtle blue tint */
+    --background: 222 47% 7%;
+    --foreground: 200 30% 92%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 200 30% 92%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 200 30% 92%;
+
+    /* Icy cyan/teal accent */
+    --primary: 175 80% 55%;
+    --primary-foreground: 222 47% 7%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 200 30% 85%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 210 25% 55%;
+
+    --accent: 175 80% 55%;
+    --accent-foreground: 222 47% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 175 80% 55%;
+
+    --radius: 0.5rem;
+
+    --font-serif: 'Inter', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Fira Code', 'SF Mono', 'Consolas', monospace;
+
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(175 80% 55% / 0.4);
+    --glow-subtle: 0 0 40px hsl(175 80% 55% / 0.15);
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 200 30% 92%;
+    --sidebar-primary: 175 80% 55%;
+    --sidebar-primary-foreground: 222 47% 7%;
+    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent-foreground: 200 30% 85%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 175 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    background-image: 
+      radial-gradient(ellipse at 20% 20%, hsl(175 80% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(200 80% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(222 47% 7%) 0%, hsl(222 47% 5%) 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(175 80% 55% / 0.25);
+    color: hsl(175 80% 95%);
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 md:py-28;
+  }
+
+  .section-container {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium;
+  }
+
+  .link-arrow {
+    @apply text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5;
+  }
+
+  .link-arrow::after {
+    content: '→';
+    @apply transition-transform duration-200;
+  }
+
+  .link-arrow:hover::after {
+    transform: translateX(3px);
+  }
+
+  /* Glow effects */
+  .shadow-glow {
+    box-shadow: var(--glow-primary);
+  }
+
+  .shadow-glow-subtle {
+    box-shadow: var(--glow-subtle);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(175 80% 55% / 0.5);
+  }
+
+  /* Tech grid background */
+  .tech-grid {
+    background-image: 
+      linear-gradient(hsl(175 80% 55% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(175 80% 55% / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Animated border */
+  .border-glow {
+    position: relative;
+  }
+
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(175 80% 55% / 0.5), transparent 50%, hsl(200 80% 55% / 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Pulse glow animation */
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(175 80% 55% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(175 80% 55% / 0.5);
+    }
+  }
+
+  /* Scan line effect */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(175 80% 55% / 0.03) 50%,
+      transparent 100%
+    );
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
