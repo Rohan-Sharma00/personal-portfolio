@@ -6,14 +6,15 @@ import { Github, ExternalLink } from 'lucide-react';
 
 const personalProjects = [
   {
-    title: 'Moviepedia',
+    title: 'JavaScript Playground',
     description:
-      'A movie discovery and information platform that allows users to search, explore, and read detailed information about movies, including plot summaries, ratings, cast, and release details. Designed for fast search, clean UI, and an engaging browsing experience.',
-    tech: ['React', 'TypeScript', 'Movie API (TMDB/OMDb)', 'Tailwind CSS'],
-    github: 'https://github.com/Rohan-Sharma00',
-    live: '#',
-    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=400&fit=crop',
+      'A real-time JavaScript code editor and execution environment. Features a curated set of interview problems, monospace code editing, safe code execution, and terminal-style output — built to feel like a professional developer tool.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    github: 'https://github.com/yashraj-bhosale',
+    live: '/javascript-playground',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
     featured: true,
+    isInternal: true,
   }
 
 ];
@@ -36,7 +37,7 @@ const PersonalProjects = () => {
               01.
             </span>
             <span>
-              Some Thing I am Building
+              Some Things I've Built
             </span>
           </h2>
           <div className="h-px bg-gradient-to-r from-border to-transparent flex-1" />
@@ -72,26 +73,28 @@ const PersonalProjects = () => {
               {/* Content */}
               <div
                 className={`md:col-span-6 relative z-10 ${index % 2 === 1
-                    ? 'md:order-1 md:col-start-1 md:text-left'
-                    : 'md:col-start-6 md:text-right'
+                  ? 'md:order-1 md:col-start-1 md:text-left'
+                  : 'md:col-start-6 md:text-right'
                   }`}
               >
                 {/* <p className="text-primary font-mono text-sm mb-2 text-glow">Featured Project</p> */}
-                <h3 className="text-foreground text-xl md:text-2xl font-semibold mb-4">
-                  <a
-                    href={project.live || project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors duration-300"
-                  >
+                <a
+                  href={project.live || project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  <h3 className="text-foreground text-xl md:text-2xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">
                     {project.title}
-                  </a>
-                </h3>
-                <div className="bg-card/80 backdrop-blur-sm p-5 md:p-6 rounded shadow-lg mb-4 border border-border/50 hover:shadow-glow-subtle transition-shadow duration-300">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+                  </h3>
+
+                  <div className="bg-card/80 backdrop-blur-sm p-5 md:p-6 rounded shadow-lg mb-4 border border-border/50 hover:shadow-glow-subtle transition-shadow duration-300">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                </a>
+
                 <ul
                   className={`flex flex-wrap gap-3 mb-4 font-mono text-xs text-primary/80 ${index % 2 === 1 ? 'md:justify-start' : 'md:justify-end'
                     }`}

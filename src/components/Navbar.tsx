@@ -8,6 +8,7 @@ const navItems = [
   { number: '02.', name: 'Experience', href: '#experience' },
   { number: '03.', name: 'Work', href: '#projects' },
   { number: '04.', name: 'Contact', href: '#contact' },
+  { number: '', name: 'Javascript Playground', href: '/javascript-playground' },
 ];
 
 const Navbar = () => {
