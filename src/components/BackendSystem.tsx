@@ -49,7 +49,7 @@ const BackendLabComponent = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               <Link
-                to={`/backendLab/${project.slug}`}
+               to={`/project/${project.slug}`}
                 className="group block h-full bg-card/50 backdrop-blur-sm p-6 rounded border border-border/50 hover:border-primary/50 hover:shadow-glow-subtle hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-6">

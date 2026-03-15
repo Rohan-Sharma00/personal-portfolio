@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom';
 import { Folder, ExternalLink } from 'lucide-react';
 
 const projects = [
- {
-  slug: 'exp-reality',
-  title: 'Exp Reality',
-  description:
-    'Enterprise-scale financial micro-frontend platform responsible for calculating and visualizing commissions, pricing, and tax workflows. Built to support complex business rules, high-volume data, and low-latency dashboards for thousands of active users, with a focus on performance, scalability, and isolated deployments.',
-  tech: ['React', 'Tailwind', 'TypeScript', 'Micro-frontends'],
-},
-{
-  slug: 'huhoka-hrms',
-  title: 'Huhoka HRMS',
-  description:
-    'Enterprise workforce management platform enabling employee lifecycle operations, role-based access control, and multi-level approval workflows. Designed with secure authentication, scalable backend APIs, and reliable data models to support HR operations across teams.',
-  tech: ['Angular', 'Node.js', 'PostgreSQL', 'RBAC'],
-},
+  {
+    slug: 'exp-reality',
+    title: 'Exp Reality',
+    description:
+      'Enterprise-scale micro-frontend financial platform handling commission calculations, pricing models, and tax workflows for thousands of brokers. As the micro-frontend project owner, I built full-stack modules using React and Node.js, implemented performance-optimized dashboards for calculation-heavy datasets, and designed scalable APIs with Express and MongoDB.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Micro-frontends', 'TypeScript'],
+  },
+  {
+    slug: 'huhoka-hrms',
+    title: 'Huhoka HRMS',
+    description:
+      'Enterprise HR management system built with Angular 16 and Node.js. I developed the Asset Management module, implementing secure backend APIs with MongoDB and integrating them with Angular components to manage asset allocation, tracking, and lifecycle workflows within the HR platform.',
+    tech: ['Angular 16', 'Node.js', 'Express', 'MongoDB', 'RBAC'],
+  },
 ];
 
 const Projects = () => {
