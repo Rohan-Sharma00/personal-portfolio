@@ -6,6 +6,7 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import EngineeringLabComponent from "@/components/ComponentLab";
+import BackendLabComponent from "@/components/BackendSystem";
 
 const Index = () => {
   return (
@@ -14,7 +15,8 @@ const Index = () => {
       <main >
         <Hero />
         <PersonalProjects />
-        <EngineeringLabComponent/>
+        <BackendLabComponent />
+        {/* <EngineeringLabComponent/> */}
         <Experience />
         <Projects />
         <Contact />
