@@ -18,7 +18,7 @@ const ProjectDetail = () => {
       <Navbar />
       <main className="pt-24">
         {/* Back Link */}
-        <section className="section-padding py-8">
+        <section className="section-padding pt-8 pb-20">
           <div className="section-container">
             <Link 
               to="/#projects" 
@@ -31,7 +31,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Project Hero */}
-        <section className="section-padding pt-0">
+        <section className="section-padding py-11">
           <div className="section-container">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
