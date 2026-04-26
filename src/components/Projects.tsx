@@ -49,13 +49,17 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <Link
+              {/* <Link
                 to={`/projects/${project.slug}`}
+                className="group block h-full bg-card/50 backdrop-blur-sm p-6 rounded border border-border/50 hover:border-primary/50 hover:shadow-glow-subtle hover:-translate-y-2 transition-all duration-300"
+              > */}
+                 <div
+                
                 className="group block h-full bg-card/50 backdrop-blur-sm p-6 rounded border border-border/50 hover:border-primary/50 hover:shadow-glow-subtle hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-6">
                   <Folder className="text-primary" size={40} strokeWidth={1} />
-                  <ExternalLink className="text-muted-foreground group-hover:text-primary transition-colors duration-300" size={20} />
+                  {/* <ExternalLink className="text-muted-foreground group-hover:text-primary transition-colors duration-300" size={20} /> */}
                 </div>
                 <h3 className="text-foreground text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
                   {project.title}
@@ -68,7 +72,8 @@ const Projects = () => {
                     <li key={tech}>{tech}</li>
                   ))}
                 </ul>
-              </Link>
+                </div>
+              {/* </Link> */}
             </motion.div>
           ))}
         </div>
