@@ -49,15 +49,15 @@ const BackendLabComponent = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               <Link
-               to={`/project/${project.slug}`}
+                to={`/project/${project.slug}`}
                 className="group block h-full bg-card/50 backdrop-blur-sm p-6 rounded border border-border/50 hover:border-primary/50 hover:shadow-glow-subtle hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-6">
                   <Server className="text-primary" size={40} strokeWidth={1} />
-                  <ExternalLink
-                    className="text-muted-foreground group-hover:text-primary transition-colors duration-300"
-                    size={20}
-                  />
+                  <div className="flex items-center gap-1 text-muted-foreground group-hover:text-primary transition-colors duration-300 text-sm font-mono">
+                    <span className="mr-1">Details</span>
+                    <ExternalLink size={16} />
+                  </div>
                 </div>
 
                 <h3 className="text-foreground text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">

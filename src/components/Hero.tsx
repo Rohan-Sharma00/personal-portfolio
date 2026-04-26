@@ -62,11 +62,38 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-muted-foreground text-base md:text-lg max-w-lg mb-10 leading-relaxed"
+              className="text-muted-foreground text-base md:text-lg max-w-lg mb-6 leading-relaxed"
             >
-              I'm an AI-driven software engineer specializing in building fast, scalable,
-              real-world web experiences with a focus on performance and architecture.
+              I’m a full-stack software engineer specializing in building fast, scalable web applications, handling both frontend and backend with a strong focus on performance and system design.
+              <p className="text-muted-foreground text-sm mt-3">
+                2+ years experience • 15+ APIs built • 89K+ users impacted
+              </p>
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-2 max-w-lg mb-6"
+            >
+              {[
+                "Full Stack",
+                "Angular",
+                "React",
+                "Node.js",
+                "REST APIs",
+                "AI Integration",
+                "JWT Auth",
+                "System Design",
+                "Performance"
+              ].map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-[11px] tracking-wide font-mono border border-primary/30 text-primary rounded-full bg-primary/5 hover:bg-primary/10 transition-all duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -132,6 +159,7 @@ const Hero = () => {
         "
                 />
               </div>
+
             </div>
           </motion.div>
 

@@ -13,10 +13,11 @@ const ProjectDetail = () => {
     return <Navigate to="/" replace />;
   }
 
-  return (
+ return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-24">
+
         {/* Back Link */}
         <section className="section-padding pt-8 pb-20">
           <div className="section-container">
@@ -41,9 +42,16 @@ const ProjectDetail = () => {
               <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
                 {project.title}
               </h1>
+
+              {/* 🔥 Impact Line */}
+              <p className="text-primary text-sm font-medium mb-4">
+                Designed a scalable backend with JWT authentication, modular API architecture, and optimized data handling.
+              </p>
+
               <p className="text-muted-foreground text-lg mb-4">
                 {project.summary}
               </p>
+
               <p className="text-sm text-muted-foreground">
                 Role: {project.role}
               </p>
@@ -67,7 +75,7 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* The Problem */}
+        {/* Problem */}
         <section className="section-padding py-12">
           <div className="section-container">
             <motion.div
@@ -83,7 +91,7 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* The Solution */}
+        {/* Solution */}
         <section className="section-padding py-12">
           <div className="section-container">
             <motion.div
@@ -103,7 +111,27 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* Challenges & Trade-offs */}
+        {/* 🔥 Architecture */}
+        <section className="section-padding py-12">
+          <div className="section-container">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+            >
+              <h2 className="font-serif text-2xl text-foreground mb-4">Architecture</h2>
+              <ul className="space-y-3">
+                <li className="text-muted-foreground">Node.js + Express REST API</li>
+                <li className="text-muted-foreground">JWT-based authentication</li>
+                <li className="text-muted-foreground">MongoDB with Mongoose</li>
+                <li className="text-muted-foreground">Modular controllers, services, middleware</li>
+                <li className="text-muted-foreground">Centralized validation & error handling</li>
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Challenges */}
         <section className="section-padding py-12">
           <div className="section-container">
             <motion.div
@@ -143,8 +171,27 @@ const ProjectDetail = () => {
           </div>
         </section>
 
+        {/* 🔥 My Contribution */}
+        <section className="section-padding py-12">
+          <div className="section-container">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+            >
+              <h2 className="font-serif text-2xl text-foreground mb-4">My Contribution</h2>
+              <ul className="space-y-3">
+                <li className="text-muted-foreground">Designed backend architecture</li>
+                <li className="text-muted-foreground">Built REST APIs using Node.js and Express</li>
+                <li className="text-muted-foreground">Implemented JWT authentication</li>
+                <li className="text-muted-foreground">Modeled database schemas and relationships</li>
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Links */}
-        {project.links && (project.links.live || project.links.github) && (
+        {project.links && project.links.github && (
           <section className="section-padding py-12">
             <div className="section-container">
               <motion.div
@@ -153,30 +200,19 @@ const ProjectDetail = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="flex gap-6"
               >
-                {/* {project.links.live && (
-                  <a
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-arrow text-foreground"
-                  >
-                    View live
-                  </a>
-                )} */}
-                {project.links.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-arrow text-foreground"
-                  >
-                    GitHub
-                  </a>
-                )}
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-arrow text-foreground"
+                >
+                  GitHub
+                </a>
               </motion.div>
             </div>
           </section>
         )}
+
       </main>
       <Footer />
     </div>
