@@ -64,9 +64,11 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-muted-foreground text-base md:text-lg max-w-lg mb-6 leading-relaxed"
             >
-              I’m a full-stack software engineer specializing in building fast, scalable web applications, handling both frontend and backend with a strong focus on performance and system design.
-              <p className="text-muted-foreground text-sm mt-3">
-                2+ years experience • 15+ APIs built • 89K+ users impacted
+              I’m a AI full-stack engineer who build scalable web applications with a strong focus on frontend, backend , performance, and clean architecture.
+              <p className="text-xs md:text-sm text-muted-foreground mt-3 tracking-wide">
+                <span className="text-foreground font-medium">2+</span> years  •
+                <span className="text-foreground font-medium ml-1">15+</span> APIs  •
+                <span className="text-foreground font-medium ml-1">89K+</span> users
               </p>
             </motion.p>
             <motion.div
