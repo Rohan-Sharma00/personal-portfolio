@@ -1,5 +1,5 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -11,18 +11,18 @@ const Hero = () => {
             key={i}
             className="absolute w-1 h-1 bg-primary/30 rounded-full"
             initial={{
-              x: Math.random() * 100 + '%',
-              y: Math.random() * 100 + '%',
-              scale: Math.random() * 0.5 + 0.5
+              x: Math.random() * 100 + "%",
+              y: Math.random() * 100 + "%",
+              scale: Math.random() * 0.5 + 0.5,
             }}
             animate={{
-              y: [null, '-20%', '120%'],
-              opacity: [0, 1, 0]
+              y: [null, "-20%", "120%"],
+              opacity: [0, 1, 0],
             }}
             transition={{
               duration: Math.random() * 10 + 15,
               repeat: Infinity,
-              delay: Math.random() * 5
+              delay: Math.random() * 5,
             }}
           />
         ))}
@@ -64,12 +64,35 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-muted-foreground text-base md:text-lg max-w-lg mb-6 leading-relaxed"
             >
-              I’m a AI full-stack engineer who build scalable web applications with a strong focus on frontend, backend , performance, and clean architecture.
-              <p className="text-xs md:text-sm text-muted-foreground mt-3 tracking-wide">
-                <span className="text-foreground font-medium">2+</span> years  •
-                <span className="text-foreground font-medium ml-1">15+</span> APIs  •
-                <span className="text-foreground font-medium ml-1">89K+</span> users
-              </p>
+              I’m a AI Full Stack Engineer building scalable web applications
+              with React, Angular, Node.js, and AI. Passionate about
+              performance, problem-solving, and creating reliable software.
+              <div className="mt-3 space-y-1 text-xs md:text-sm tracking-wide">
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">2+</span>{" "}
+                  Years Experience
+                  <span className="mx-2">•</span>
+                  <span className="text-foreground font-semibold">
+                    15+
+                  </span>{" "}
+                  REST APIs
+                  <span className="mx-2">•</span>
+                  <span className="text-foreground font-semibold">
+                    89K+
+                  </span>{" "}
+                  Active Users
+                </p>
+
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">20%</span>{" "}
+                  Performance Improvement
+                  <span className="mx-2">•</span>
+                  <span className="text-foreground font-semibold">
+                    200+
+                  </span>{" "}
+                  DSA Problems
+                </p>
+              </div>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -86,7 +109,7 @@ const Hero = () => {
                 "AI Integration",
                 "JWT Auth",
                 "System Design",
-                "Performance"
+                "Performance",
               ].map((skill, index) => (
                 <span
                   key={index}
@@ -161,10 +184,8 @@ const Hero = () => {
         "
                 />
               </div>
-
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

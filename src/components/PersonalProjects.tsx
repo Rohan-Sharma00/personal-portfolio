@@ -1,22 +1,34 @@
 "use client";
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 const personalProjects = [
   {
-    title: 'JavaScript Playground',
+    title: "JavaScript Playground",
     description:
-      'A real-time JavaScript code editor and execution environment. Features a curated set of interview problems, monospace code editing, safe code execution, and terminal-style output — built to feel like a professional developer tool.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com/yashraj-bhosale',
-    live: '/javascript-playground',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
+      "A real-time JavaScript code editor and execution environment. Features a curated set of interview problems, monospace code editing, safe code execution, and terminal-style output — built to feel like a professional developer tool.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "",
+    live: "/javascript-playground",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
     featured: true,
     isInternal: true,
-  }
-
+  },
+  {
+    title: "Dynamic Form Builder",
+    description:
+      "A configurable multi-step form builder that generates forms from JSON. Supports dynamic fields, validation, conditional rendering, and a responsive UI with a clean, reusable component architecture.",
+    tech: ["React", "Node.js", "Express.js"],
+    github: "https://github.com/Rohan-Sharma00/dynamic-stepper-form",
+    live: "https://dynamic-stepper-form.vercel.app/submissions",
+    image:
+      "https://miro.medium.com/v2/resize:fit:875/1*6Rmpz-UqMUq5UcshBZeuDQ.jpeg",
+    featured: true,
+    isInternal: true,
+  },
 ];
 
 const PersonalProjects = () => {
@@ -24,7 +36,11 @@ const PersonalProjects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="personal-projects" className="section-padding relative" ref={ref}>
+    <section
+      id="personal-projects"
+      className="section-padding relative"
+      ref={ref}
+    >
       <div className="section-container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,9 +52,7 @@ const PersonalProjects = () => {
             <span className="text-primary font-mono text-lg md:text-xl mr-4 text-glow shrink-0 w-8">
               01.
             </span>
-            <span>
-              Some Things I've Built
-            </span>
+            <span>Some Things I've Built</span>
           </h2>
           <div className="h-px bg-gradient-to-r from-border to-transparent flex-1" />
         </motion.div>
@@ -50,13 +64,11 @@ const PersonalProjects = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.2 }}
-              className={`relative grid md:grid-cols-12 gap-4 items-center ${index % 2 === 1 ? 'md:text-right' : ''
-                }`}
+             className="relative grid md:grid-cols-12 gap-4 items-center"
             >
               {/* Image */}
               <div
-                className={`md:col-span-7 relative group ${index % 2 === 1 ? 'md:order-2 md:col-start-6' : 'md:col-start-1'
-                  }`}
+               className="md:col-span-7 md:col-start-1 relative group"
               >
                 <a href={project.live || project.github} target="_blank" rel="noopener noreferrer">
                   <div className="relative overflow-hidden rounded bg-primary/5 border-glow">
@@ -71,12 +83,7 @@ const PersonalProjects = () => {
               </div>
 
               {/* Content */}
-              <div
-                className={`md:col-span-6 relative z-10 ${index % 2 === 1
-                  ? 'md:order-1 md:col-start-1 md:text-left'
-                  : 'md:col-start-6 md:text-right'
-                  }`}
-              >
+             <div className="md:col-span-6 md:col-start-6 relative z-10 md:text-right">
                 {/* <p className="text-primary font-mono text-sm mb-2 text-glow">Featured Project</p> */}
                 <a
                   href={project.live || project.github}
@@ -96,16 +103,14 @@ const PersonalProjects = () => {
                 </a>
 
                 <ul
-                  className={`flex flex-wrap gap-3 mb-4 font-mono text-xs text-primary/80 ${index % 2 === 1 ? 'md:justify-start' : 'md:justify-end'
-                    }`}
+                  className="flex flex-wrap gap-3 mb-4 font-mono text-xs text-primary/80 md:justify-end"
                 >
                   {project.tech.map((tech) => (
                     <li key={tech}>{tech}</li>
                   ))}
                 </ul>
                 <div
-                  className={`flex gap-4 ${index % 2 === 1 ? 'md:justify-start' : 'md:justify-end'
-                    }`}
+                 className="flex gap-4 md:justify-end"
                 >
                   {/* {project.github && (
                     <a
